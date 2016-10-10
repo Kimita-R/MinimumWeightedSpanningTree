@@ -13,23 +13,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include "LinkList.h"
-#include "Graph_list.h"
-//#include "Graph_matrix.h"
+#include <stdexcept>
+#include "GraphList.h"
+#include "GraphMatrix.h"
 
 using namespace std;
 
 int main(void){
     //srand(double(time(NULL)));
 
-    //const string fileInName = "../../data/sparse.dat";
-    const string fileInName = "../../data/dense.dat";
+    const string fileInName = "../../data/sparse.dat";
+    //const string fileInName = "../../data/dense.dat";
 
     ifstream input(fileInName, ios::in);
 
     // error checking
     if (!input.is_open()) { cout << "Unable to open file:" << fileInName << endl; return -1;}
 
+    // Read in file
     string line;
     int numVertex, numEdge, vert1, vert2;
     long int linesCount = 0;
@@ -39,27 +40,25 @@ int main(void){
     while (getline(input, line)) linesCount++;
     input.clear();
     input.seekg(0, ios::beg);
+    long int linesReduce = linesCount;
 
-    // read in an build graph, while data to read
-    while (linesCount>1) {
+    // read in an build graph, while there is data to read
+    while (linesReduce>1) {
         getline(input, line);
         istringstream ss_1(line);
         ss_1 >> numVertex;
-        linesCount--;
+        linesReduce--;
         getline(input, line);
         istringstream ss_2(line);
         ss_2 >> numEdge;
-        linesCount--;
+        linesReduce--;
 
-        Graph_list* g = new Graph_list;
-
-        for (int i = 0; i < numVertex; i++) g->addVertex();
+        GraphList* g = new GraphList(numVertex);
         for (int i = 0; i < numEdge; i++) {
             getline(input, line);
-            linesCount--;
+            linesReduce--;
             istringstream ss(line);
             ss >> vert1 >> vert2 >> weight;
-            //std::cout << vert1 << "→" << vert2 << "(" << weight << ")" << std::endl;
             g->addEdge(vert1, vert2, weight);
         };
 
@@ -69,6 +68,42 @@ int main(void){
         delete g;
     };
 
+    std::cout << "========================================================" << std::endl;
+
+    //test Matrix implementation....
+    input.clear();
+    input.seekg(0, ios::beg);
+    linesReduce = linesCount;
+
+    // read in an build graph, while there is data to read
+    while (linesReduce>1) {
+        getline(input, line);
+        istringstream ss_1(line);
+        ss_1 >> numVertex;
+        linesReduce--;
+        getline(input, line);
+        istringstream ss_2(line);
+        ss_2 >> numEdge;
+        linesReduce--;
+
+        GraphMatrix* g = new GraphMatrix(numVertex);
+        for (int i = 0; i < numEdge; i++) {
+            getline(input, line);
+            linesReduce--;
+            istringstream ss(line);
+            ss >> vert1 >> vert2 >> weight;
+            g->addEdge(vert1, vert2, weight);
+        };
+
+        // Do something with the graph here....
+        g->display();
+        std::cout << "it got here" << std::endl;
+
+        delete g;
+    };
+
+    // end and close
     input.close();
+
     return 0;
 }
