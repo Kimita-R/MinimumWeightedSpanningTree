@@ -37,6 +37,10 @@ Cache.db
 tmp/**/*
 *.db
 *.plist
+*.pbxproj
+*.xcworkspace
+*.xcworkspacedata
+*.xcodeproj
 
 
 # Compiled Object files
