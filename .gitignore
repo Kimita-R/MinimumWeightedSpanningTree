@@ -4,6 +4,8 @@ DerivedData/
 Intermediates/
 DerivedData/*
 Intermediates/*
+Products
+Products/*
 Report
 Report/
 Report/*
@@ -35,6 +37,11 @@ Cache.db
 tmp/**/*
 *.db
 *.plist
+*.pbxproj
+*.xcworkspace
+*.xcworkspacedata
+*.xcodeproj
+*.cbp
 
 
 # Compiled Object files
