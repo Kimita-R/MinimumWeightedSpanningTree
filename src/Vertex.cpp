@@ -19,7 +19,7 @@ Vertex::Vertex(long int i){
 
 void Vertex::addEdge(Edge* e){
     connectedEdges.push_back(e);
-};
+}
 
 void Vertex::removeEdge(Edge* e){
     for( int i = 0; i < connectedEdges.size(); i++){
@@ -28,31 +28,28 @@ void Vertex::removeEdge(Edge* e){
             i--;
         }
     }
-};
+}
 
 long int Vertex::getName(){
     return name;
-};
+}
 
 long int Vertex::numEdges(){
     return connectedEdges.size();
-};
+}
 
-Edge* Vertex::getEdge(int i){
+Edge* Vertex::getEdge(long int i){
     return connectedEdges.at(i);
 }
 
 const bool Vertex::isVisited(){
     return visited;
-};
+}
 
 void Vertex::setVisited(bool value){
     visited = value;
-};
+}
 
 Vertex::~Vertex(){
     connectedEdges.clear();
 }
-
-// Potential exceptions: empty edgelist with any of the getter methods...
-// What should visited be when the list is empty??
