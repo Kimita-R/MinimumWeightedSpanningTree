@@ -41,6 +41,7 @@ tmp/**/*
 *.xcworkspace
 *.xcworkspacedata
 *.xcodeproj
+*.cbp
 
 
 # Compiled Object files
