@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA228821DABC7BE0063DEF1 /* prim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA228811DABC7BE0063DEF1 /* prim.cpp */; };
+		0EA228851DABC7CB0063DEF1 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
+		0EA228861DABC7CB0063DEF1 /* Graph_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */; };
+		0EA228871DABC7CB0063DEF1 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF31D9FF1C800733F3B /* Edge.cpp */; };
+		0EA228881DABC7CB0063DEF1 /* prim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA228811DABC7BE0063DEF1 /* prim.cpp */; };
+		0EA228891DABC7CB0063DEF1 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
+		0EA228901DABC7DA0063DEF1 /* prim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA228811DABC7BE0063DEF1 /* prim.cpp */; };
+		0EA228911DABC7DB0063DEF1 /* prim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA228811DABC7BE0063DEF1 /* prim.cpp */; };
+		0EA228921DABC7DD0063DEF1 /* prim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EA228811DABC7BE0063DEF1 /* prim.cpp */; };
 		8F06943C1D9C8482002D72CD /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
 		8F190C641DA6971C00E3C703 /* generate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F190C601DA67D4500E3C703 /* generate.cpp */; };
 		8F190C751DA6973E00E3C703 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
@@ -27,6 +36,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0EA2288B1DABC7CB0063DEF1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		8F190C6B1DA6971C00E3C703 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EA228811DABC7BE0063DEF1 /* prim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = prim.cpp; sourceTree = "<group>"; };
+		0EA2288F1DABC7CB0063DEF1 /* prim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = prim; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0694381D9C8482002D72CD /* LinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkList.cpp; sourceTree = "<group>"; };
 		8F0694391D9C8482002D72CD /* LinkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
 		8F06943A1D9C8482002D72CD /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
@@ -93,6 +113,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0EA2288A1DABC7CB0063DEF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F190C6A1DA6971C00E3C703 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +173,7 @@
 				8F190C7C1DA6973E00E3C703 /* edge */,
 				8F190C891DA6974600E3C703 /* graph */,
 				8F190C961DA6974C00E3C703 /* vertex */,
+				0EA2288F1DABC7CB0063DEF1 /* prim */,
 			);
 			name = Products;
 			path = ..;
@@ -154,6 +182,7 @@
 		8FAD48AE1D9C810200563E75 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0EA228811DABC7BE0063DEF1 /* prim.cpp */,
 				8F1A3AF41D9FF1C800733F3B /* Edge.h */,
 				8F1A3AF31D9FF1C800733F3B /* Edge.cpp */,
 				8F1A3AEF1D9EA56E00733F3B /* Vertex.h */,
@@ -172,6 +201,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0EA228831DABC7CB0063DEF1 /* prim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EA2288C1DABC7CB0063DEF1 /* Build configuration list for PBXNativeTarget "prim" */;
+			buildPhases = (
+				0EA228841DABC7CB0063DEF1 /* Sources */,
+				0EA2288A1DABC7CB0063DEF1 /* Frameworks */,
+				0EA2288B1DABC7CB0063DEF1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = prim;
+			productName = MinimumWeightedSpanningTree;
+			productReference = 0EA2288F1DABC7CB0063DEF1 /* prim */;
+			productType = "com.apple.product-type.tool";
+		};
 		8F190C621DA6971C00E3C703 /* generate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F190C6C1DA6971C00E3C703 /* Build configuration list for PBXNativeTarget "generate" */;
@@ -289,11 +335,24 @@
 				8F190C701DA6973E00E3C703 /* edge */,
 				8F190C7D1DA6974600E3C703 /* graph */,
 				8F190C8A1DA6974C00E3C703 /* vertex */,
+				0EA228831DABC7CB0063DEF1 /* prim */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0EA228841DABC7CB0063DEF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EA228851DABC7CB0063DEF1 /* Vertex.cpp in Sources */,
+				0EA228861DABC7CB0063DEF1 /* Graph_list.cpp in Sources */,
+				0EA228871DABC7CB0063DEF1 /* Edge.cpp in Sources */,
+				0EA228881DABC7CB0063DEF1 /* prim.cpp in Sources */,
+				0EA228891DABC7CB0063DEF1 /* test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F190C631DA6971C00E3C703 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +368,7 @@
 				8F190CA91DA69C8000E3C703 /* Graph_list.cpp in Sources */,
 				8F190CA81DA69C7D00E3C703 /* Vertex.cpp in Sources */,
 				8F190C751DA6973E00E3C703 /* test.cpp in Sources */,
+				0EA228921DABC7DD0063DEF1 /* prim.cpp in Sources */,
 				8F190C761DA6973E00E3C703 /* Edge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +380,7 @@
 				8F190CA51DA69C7900E3C703 /* Edge.cpp in Sources */,
 				8F190CA71DA69C7D00E3C703 /* Vertex.cpp in Sources */,
 				8F190C801DA6974600E3C703 /* Graph_list.cpp in Sources */,
+				0EA228911DABC7DB0063DEF1 /* prim.cpp in Sources */,
 				8F190C821DA6974600E3C703 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +392,7 @@
 				8F190CAA1DA69C8100E3C703 /* Graph_list.cpp in Sources */,
 				8F190CA61DA69C7A00E3C703 /* Edge.cpp in Sources */,
 				8F190C8E1DA6974C00E3C703 /* Vertex.cpp in Sources */,
+				0EA228901DABC7DA0063DEF1 /* prim.cpp in Sources */,
 				8F190C8F1DA6974C00E3C703 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +404,7 @@
 				8F190CAC1DA69C9D00E3C703 /* Vertex.cpp in Sources */,
 				8F190CAB1DA69C9A00E3C703 /* Graph_list.cpp in Sources */,
 				8F190CAD1DA69C9F00E3C703 /* Edge.cpp in Sources */,
+				0EA228821DABC7BE0063DEF1 /* prim.cpp in Sources */,
 				8F06943C1D9C8482002D72CD /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +412,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0EA2288D1DABC7CB0063DEF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0EA2288E1DABC7CB0063DEF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		8F190C6D1DA6971C00E3C703 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -509,6 +586,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0EA2288C1DABC7CB0063DEF1 /* Build configuration list for PBXNativeTarget "prim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EA2288D1DABC7CB0063DEF1 /* Debug */,
+				0EA2288E1DABC7CB0063DEF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8F190C6C1DA6971C00E3C703 /* Build configuration list for PBXNativeTarget "generate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
