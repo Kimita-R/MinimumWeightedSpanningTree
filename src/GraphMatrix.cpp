@@ -1,44 +1,53 @@
-#include "/home/xubuntu/Desktop/GraphMatrix1/GraphMatrix.h"
+/**
+ * COMS2004 Assignment 2, Minimum Weighted Spanning Tree Project
+ * @file GraphMatrix.cpp
+ * @Synopsis Implementation file for a GraphMatrix class
+ * @author Tyson Cross, Kulani Nukeri, Kopano Malombo, Vassiliki Marantos, Vulombe Mathebula, Kimita Ramalingum, Mfaniseni Thusi
+ * @version 1.0
+ * @date 2016-10-10
+ */
+//
+
+
+#include "GraphMatrix.h"
 
 //removed operator overloader that conflicts with Edge*** GraphMatrix::Edges from Edge
-GraphMatrix::GraphMatrix(int size){
+GraphMatrix::GraphMatrix(long int size){
 
 	sizeOfGraph = size;
 	numOfEdges = 0;
-	numOfVertice = sizeOfGraph;
+	numOfVertices = sizeOfGraph;
 	capacity = (sizeOfGraph*(sizeOfGraph-1))/2;
-	if(capacity>0){
-		Edges = new Edge**[capacity];
-		for(int i = 0;i<capacity;i++){
-			Edges[i] = new Edge*[capacity];
-		}	
-	}
-	if(capacity>0){
-		for(int i=0;i<capacity;i++){
-			for(int j=0;j<capacity;i++){
-	
-				Edges[i][j] = NULL;
-			}
-		}
-	}
+    if(capacity>0){
+        Edges = new Edge**[capacity];
+        for(int i = 0;i<capacity;i++){
+            Edges[i] = new Edge*[capacity];
+        }
+    }
+    if(capacity>0){
+        for(int i=0;i<capacity;i++){
+            for(int j=0;j<capacity;i++){
+                
+                Edges[i][j] = NULL;
+            }
+        }
+    }
 }
 
-bool GraphMatrix::isEmpty(){
-	if(numOfEdges==0){
-	return true;
-	}
-	else{return false;}
+bool GraphMatrix::isEmpty() const{
+	if(numOfEdges==0) return true;
+	else return false;
 }
 
-int GraphMatrix::numEdges() const{
+long int GraphMatrix::numEdges() const{
 	return numOfEdges;
 }
-
-int GraphMatrix::numVertice() const{
-	return numOfVertice;
+long int GraphMatrix::numVertices() const{
+	return numOfVertices;
 }
 
-void GraphMatrix::addEdge(int vert1, int vert2, double weight){ //adds extra feature that ensures that vert2>vert1 and never less to avoid duplication; if !(vert2>vert1) it should return an error that edge already exist
+void GraphMatrix::addEdge(int vert1, int vert2, double weight){
+    //adds extra feature that ensures that vert2>vert1 and never less to avoid duplication; if !(vert2>vert1) it should return an error that edge already exist
 	if(!(vert1>capacity)&&!(vert2>capacity)){
 		if(capacity>0&&!(numOfEdges>capacity)){
 			//pointers	
@@ -56,15 +65,15 @@ void GraphMatrix::addEdge(int vert1, int vert2, double weight){ //adds extra fea
 		}
 		else{
 			if(!(capacity>0)){
-				cout << "Graph not initialised error: The graph needs to be initialised with 'initGraph(int size)' member function"<<endl;
+				throw ("Graph not initialised: The graph needs to be initialised with 'initGraph(int size)' member function");
 			}
 			else{
-				cout <<"Graph exceeding capacity error: The maximum number of edges has been reached; can no longer add edges"<<endl;
+                throw std::out_of_range("Graph exceeding capacity: The maximum number of edges has been reached; can no longer add edges");
 			}
 		}
 	}
 	else{
-		cout <<"Vertice out of range error: The vertice are out of range defined by capacity of the graph"<<endl;
+		throw std::out_of_range("The vertices are out of the range defined by capacity of the graph");
 	}
 }
 
@@ -77,11 +86,11 @@ void GraphMatrix::removeEdge(int i, int j){
 			numOfEdges--;
 		}
 		else{
-			cout <<"Deleting Empty Graph error: The Graph is empty; cannot delete edges"<<endl;
+			throw std::logic_error("The Graph is empty; cannot delete edges");
 		}
 	}
 	else{
-		cout <<"indices out of bound error: The indices are out of bound defined by the capacity of the graph"<<endl;
+		throw std::out_of_range("The indices are out of bound defined by the capacity of the graph");
 	}
 }
 
@@ -104,7 +113,7 @@ void GraphMatrix::initGraph(int size){
 	}
 }
 
-bool GraphMatrix::isConnected(int vert1, int vert2){
+bool GraphMatrix::isConnected(int vert1, int vert2) const{
 	if(Edges[vert1][vert2]!=NULL){
 		return true;
 	}
@@ -119,8 +128,8 @@ Edge* GraphMatrix::getEdge(int i, int j){
 
 //sorting algorithm
 //within the graph; returns a sorted list of Edges
-vector<Edge*>  GraphMatrix::getEdgeList(){
-	vector<Edge*> EdgeList;
+std::vector<Edge*>  GraphMatrix::getEdgeList(){
+	std::vector<Edge*> EdgeList;
 	EdgeList.reserve(numOfEdges);
 	//extract edges from graph
 	for(int i=0; i<capacity;i++){
@@ -137,9 +146,9 @@ vector<Edge*>  GraphMatrix::getEdgeList(){
 }
 
 void GraphMatrix::display(){
-	vector<Vertex*> Vertice;
-	Vertice.reserve(capacity);
-	//extract vertice and their adjacent vertice
+	std::vector<Vertex*> Vertices;
+	Vertices.reserve(capacity);
+	//extract vertices and their adjacent vertices
 	for(int i=0;i<capacity;i++){
 		Vertex u(i);
 		Vertex* v1 = &u;
@@ -148,18 +157,17 @@ void GraphMatrix::display(){
 				v1->addEdge(Edges[i][j]);
 			}
 		}
-		Vertice.push_back(v1);
+		Vertices.push_back(v1);
 	}
 	//display the Vertice
 }
 
 GraphMatrix::~GraphMatrix(){
-	for(int i=0;i<capacity;i++){
-		for(int j=0;j<capacity;j++){
+	for(int i=0; i<capacity; i++){
+		for(int j=0; j<capacity; j++){
 			delete Edges[i][j];
 		}
 		delete[] Edges[i];
 	}
 	delete[] Edges;
 }
-int main(){return 0;}

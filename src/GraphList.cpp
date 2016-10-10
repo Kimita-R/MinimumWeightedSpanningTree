@@ -23,15 +23,15 @@ GraphList::GraphList(int verts){
 
 //GraphList::GraphList(const GraphList& obj){};
 
-bool GraphList::isEmpty(){
+bool GraphList::isEmpty() const{
     return vertices.empty();
 }
 
-long int GraphList::numVertices(){
+long int GraphList::numVertices() const{
     return vertices.size();
 }
 
-long int GraphList::numEdges(){
+long int GraphList::numEdges() const{
     return edges.size();
 }
 
@@ -88,7 +88,7 @@ void GraphList::removeEdge(int vert1, int vert2){
     }
 }
 
-bool GraphList::isConnected(int vert1, int vert2){
+bool GraphList::isConnected(int vert1, int vert2) const{
     // check the connectedEdges lists for both vertices, to see if there is a common edge
     for (int i = 0; i < vertices.at(vert1)->numEdges() ; i++){
         for (int j = 0; j < vertices.at(vert2)->numEdges() ; j++){
