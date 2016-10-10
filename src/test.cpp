@@ -13,17 +13,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include "LinkList.h"
-#include "Graph_list.h"
-//#include "Graph_matrix.h"
+#include <stdexcept>
+#include "GraphList.h"
+//#include "GraphMatrix.h"
 
 using namespace std;
 
 int main(void){
     //srand(double(time(NULL)));
 
-    //const string fileInName = "../../data/sparse.dat";
-    const string fileInName = "../../data/dense.dat";
+    const string fileInName = "../../data/sparse.dat";
+    //const string fileInName = "../../data/dense.dat";
 
     ifstream input(fileInName, ios::in);
 
@@ -51,15 +51,12 @@ int main(void){
         ss_2 >> numEdge;
         linesCount--;
 
-        Graph_list* g = new Graph_list;
-
-        for (int i = 0; i < numVertex; i++) g->addVertex();
+        GraphList* g = new GraphList(numVertex);
         for (int i = 0; i < numEdge; i++) {
             getline(input, line);
             linesCount--;
             istringstream ss(line);
             ss >> vert1 >> vert2 >> weight;
-            //std::cout << vert1 << "→" << vert2 << "(" << weight << ")" << std::endl;
             g->addEdge(vert1, vert2, weight);
         };
 
