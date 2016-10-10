@@ -17,19 +17,18 @@
 
 class GraphList{
 public:
-    GraphList(int verts);
-    //GraphList(const GraphList& obj);
-    bool isEmpty();
-    long int numVertices();
-    long int numEdges();
-    void addEdge(int vert1, int ver2, double weight);
-    void removeEdge(int i, int j);
-    bool isConnected(int vert1, int vert2);
+    GraphList(int verts = 0);
+    ~GraphList();
+    bool isEmpty() const;
+    long int numVertices() const;
+    long int numEdges() const;
+    void addEdge(int vert1, int vert2, double weight);
+    void removeEdge(int vert1, int vert2);
+    bool isConnected(int vert1, int vert2) const;
     Edge* getEdge(int i, int j);
     Vertex* getVertex(long int i);
     std::vector<Edge*> getEdgeList();
     void display();
-    ~GraphList();
 private:
     void addVertex();
     std::vector<Vertex*> vertices;
