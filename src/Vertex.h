@@ -22,7 +22,7 @@ public:
     Vertex(long int i);
     void addEdge(Edge* e);
     void removeEdge(Edge* e);
-    Edge* getEdge(int i);
+    Edge* getEdge(long int i);
     long int getName();
     long int numEdges();
     const bool isVisited();

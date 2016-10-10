@@ -1,40 +1,39 @@
 /**
  * COMS2004 Assignment 2, Minimum Weighted Spanning Tree Project
- * @file Graph_list.h
- * @Synopsis Definition file for a Graph_list class
+ * @file GraphList.h
+ * @Synopsis Definition file for a GraphList class
  * @author Tyson Cross, Kulani Nukeri, Kopano Malombo, Vassiliki Marantos, Vulombe Mathebula, Kimita Ramalingum, Mfaniseni Thusi
  * @version 1.0
  * @date 2016-09-28
  */
 
-#ifndef Graph_list_h
-#define Graph_list_h
+#ifndef GraphList_h
+#define GraphList_h
 
 #include <stdio.h>
 #include <vector>
 #include "Vertex.h"
 #include "Edge.h"
 
-class Graph_list{
+class GraphList{
 public:
-    Graph_list();
-    //Graph_list(const Graph_list& obj);
+    GraphList(int verts);
+    //GraphList(const GraphList& obj);
     bool isEmpty();
     long int numVertices();
     long int numEdges();
-    void addVertex();
     void addEdge(int vert1, int ver2, double weight);
-    void removeEdge(long int i);
+    void removeEdge(int i, int j);
     bool isConnected(int vert1, int vert2);
-    Edge* getEdge(long int i);
+    Edge* getEdge(int i, int j);
     Vertex* getVertex(long int i);
-    void sortEdges();
+    std::vector<Edge*> getEdgeList();
     void display();
-    ~Graph_list();
+    ~GraphList();
 private:
+    void addVertex();
     std::vector<Vertex*> vertices;
     std::vector<Edge*> edges;
-    //int id_counter;
 };
 
-#endif /* Graph_list_h */
+#endif /* GraphList_h */

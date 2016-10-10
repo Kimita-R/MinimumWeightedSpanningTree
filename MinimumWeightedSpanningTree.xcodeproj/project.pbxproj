@@ -11,7 +11,7 @@
 		8F190C641DA6971C00E3C703 /* generate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F190C601DA67D4500E3C703 /* generate.cpp */; };
 		8F190C751DA6973E00E3C703 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
 		8F190C761DA6973E00E3C703 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF31D9FF1C800733F3B /* Edge.cpp */; };
-		8F190C801DA6974600E3C703 /* Graph_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */; };
+		8F190C801DA6974600E3C703 /* GraphList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* GraphList.cpp */; };
 		8F190C821DA6974600E3C703 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
 		8F190C8E1DA6974C00E3C703 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
 		8F190C8F1DA6974C00E3C703 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
@@ -19,9 +19,9 @@
 		8F190CA61DA69C7A00E3C703 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF31D9FF1C800733F3B /* Edge.cpp */; };
 		8F190CA71DA69C7D00E3C703 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
 		8F190CA81DA69C7D00E3C703 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
-		8F190CA91DA69C8000E3C703 /* Graph_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */; };
-		8F190CAA1DA69C8100E3C703 /* Graph_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */; };
-		8F190CAB1DA69C9A00E3C703 /* Graph_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */; };
+		8F190CA91DA69C8000E3C703 /* GraphList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* GraphList.cpp */; };
+		8F190CAA1DA69C8100E3C703 /* GraphList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* GraphList.cpp */; };
+		8F190CAB1DA69C9A00E3C703 /* GraphList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* GraphList.cpp */; };
 		8F190CAC1DA69C9D00E3C703 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
 		8F190CAD1DA69C9F00E3C703 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF31D9FF1C800733F3B /* Edge.cpp */; };
 /* End PBXBuildFile section */
@@ -75,16 +75,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8F0694381D9C8482002D72CD /* LinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkList.cpp; sourceTree = "<group>"; };
-		8F0694391D9C8482002D72CD /* LinkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
 		8F06943A1D9C8482002D72CD /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		8F190C601DA67D4500E3C703 /* generate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = generate.cpp; sourceTree = "<group>"; };
 		8F190C6F1DA6971C00E3C703 /* generate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = generate; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F190C7C1DA6973E00E3C703 /* edge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = edge; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F190C891DA6974600E3C703 /* graph */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = graph; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F190C961DA6974C00E3C703 /* vertex */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vertex; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph_list.cpp; sourceTree = "<group>"; };
-		8F1A3AEC1D9EA37500733F3B /* Graph_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph_list.h; sourceTree = "<group>"; };
+		8F1A3AEB1D9EA37500733F3B /* GraphList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphList.cpp; sourceTree = "<group>"; };
+		8F1A3AEC1D9EA37500733F3B /* GraphList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphList.h; sourceTree = "<group>"; };
 		8F1A3AEF1D9EA56E00733F3B /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex.cpp; sourceTree = "<group>"; };
 		8F1A3AF31D9FF1C800733F3B /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
@@ -158,10 +156,8 @@
 				8F1A3AF31D9FF1C800733F3B /* Edge.cpp */,
 				8F1A3AEF1D9EA56E00733F3B /* Vertex.h */,
 				8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */,
-				8F1A3AEC1D9EA37500733F3B /* Graph_list.h */,
-				8F1A3AEB1D9EA37500733F3B /* Graph_list.cpp */,
-				8F0694391D9C8482002D72CD /* LinkList.h */,
-				8F0694381D9C8482002D72CD /* LinkList.cpp */,
+				8F1A3AEC1D9EA37500733F3B /* GraphList.h */,
+				8F1A3AEB1D9EA37500733F3B /* GraphList.cpp */,
 				8F190C601DA67D4500E3C703 /* generate.cpp */,
 				8F06943A1D9C8482002D72CD /* test.cpp */,
 				8FAD48AD1D9C810200563E75 /* Products */,
@@ -306,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F190CA91DA69C8000E3C703 /* Graph_list.cpp in Sources */,
+				8F190CA91DA69C8000E3C703 /* GraphList.cpp in Sources */,
 				8F190CA81DA69C7D00E3C703 /* Vertex.cpp in Sources */,
 				8F190C751DA6973E00E3C703 /* test.cpp in Sources */,
 				8F190C761DA6973E00E3C703 /* Edge.cpp in Sources */,
@@ -319,7 +315,7 @@
 			files = (
 				8F190CA51DA69C7900E3C703 /* Edge.cpp in Sources */,
 				8F190CA71DA69C7D00E3C703 /* Vertex.cpp in Sources */,
-				8F190C801DA6974600E3C703 /* Graph_list.cpp in Sources */,
+				8F190C801DA6974600E3C703 /* GraphList.cpp in Sources */,
 				8F190C821DA6974600E3C703 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F190CAA1DA69C8100E3C703 /* Graph_list.cpp in Sources */,
+				8F190CAA1DA69C8100E3C703 /* GraphList.cpp in Sources */,
 				8F190CA61DA69C7A00E3C703 /* Edge.cpp in Sources */,
 				8F190C8E1DA6974C00E3C703 /* Vertex.cpp in Sources */,
 				8F190C8F1DA6974C00E3C703 /* test.cpp in Sources */,
@@ -340,7 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F190CAC1DA69C9D00E3C703 /* Vertex.cpp in Sources */,
-				8F190CAB1DA69C9A00E3C703 /* Graph_list.cpp in Sources */,
+				8F190CAB1DA69C9A00E3C703 /* GraphList.cpp in Sources */,
 				8F190CAD1DA69C9F00E3C703 /* Edge.cpp in Sources */,
 				8F06943C1D9C8482002D72CD /* test.cpp in Sources */,
 			);
