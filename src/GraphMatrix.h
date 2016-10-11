@@ -34,7 +34,6 @@ class GraphMatrix{
 	void display();
  private:
 	long int capacity;
-	long int sizeOfGraph;
 	long int numOfEdges;
 	long int numOfVertices;
 	Edge*** Edges;
