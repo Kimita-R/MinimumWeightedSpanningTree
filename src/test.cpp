@@ -86,20 +86,19 @@ int main(void){
         ss_2 >> numEdge;
         linesReduce--;
 
-        GraphMatrix* g = new GraphMatrix(numVertex);
+        GraphMatrix* g1 = new GraphMatrix(numVertex);
         for (int i = 0; i < numEdge; i++) {
             getline(input, line);
             linesReduce--;
             istringstream ss(line);
             ss >> vert1 >> vert2 >> weight;
-            g->addEdge(vert1, vert2, weight);
+            g1->addEdge(vert1, vert2, weight);
         };
 
         // Do something with the graph here....
-        g->display();
-        std::cout << "it got here" << std::endl;
+        g1->display();
 
-        delete g;
+        //delete g1;
     };
 
     // end and close

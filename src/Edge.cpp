@@ -36,18 +36,23 @@ Vertex* Edge::getV(){
     return v;
 }
 
-bool Edge::operator==(const Edge &obj)
-{
+Edge& Edge::operator=(const Edge &obj){
+    weight = obj.weight;
+    u = obj.u;
+    v = obj.v;
+    visited = obj.visited;
+    return *this;
+}
+
+bool Edge::operator==(const Edge &obj){
     return (weight == obj.weight);
 }
 
-bool Edge::operator>(const Edge &obj)
-{
+bool Edge::operator>(const Edge &obj){
     return (weight > obj.weight);
 }
 
-bool Edge::operator<(const Edge &obj)
-{
+bool Edge::operator<(const Edge &obj){
     return (weight < obj.weight);
 }
 
