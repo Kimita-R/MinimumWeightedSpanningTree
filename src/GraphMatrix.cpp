@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <iomanip>
 #include "GraphMatrix.h"
 
 //removed operator overloader that conflicts with Edge*** GraphMatrix::Edges from Edge
@@ -158,20 +159,23 @@ std::vector<Edge*>  GraphMatrix::getEdgeList(){
 //}
 
 void GraphMatrix::display(){
+    int width = 3;
+    std::string null_char = "∅";
     std::cout << "# Adjacency Matrix: By edges ( currently not correctly displayed)" << std::endl;
     // need to used the std::fixed output
+    std::cout<< std::setw(width) << std::left << " ";
     for(int i=0;i<numVertices();i++){
-        std::cout<<"| "<<i<<" ";
+        std::cout<< std::setw(width) << std::left << "|"<<i<<" ";
     }
     std::cout<<std::endl;
     for(int i=0;i<numVertices();i++){
-        std::cout<<i<<"| ";
+        std::cout<< std::setw(width) << std::left << i<<"|";
         for(int j=0;j<numVertices();j++){
             if(Edges[i][j]==NULL){
-                std::cout<<" ∅ |";
+                std::cout<< std::setw(width) << std::left << " " << null_char << " ";
             }
             else {
-                std::cout << " " <<Edges[i][j]->getWeight()<<"|";
+                std::cout<< std::setw(width) << std::left << " "<< Edges[i][j]->getWeight();
             }
         }
         std::cout<<std::endl;
