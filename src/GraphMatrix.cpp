@@ -8,24 +8,26 @@
  */
 //
 
-#include <stdio.h>
-#include <stdlib.h>
+
 #include "GraphMatrix.h"
 
 //removed operator overloader that conflicts with Edge*** GraphMatrix::Edges from Edge
 GraphMatrix::GraphMatrix(long int size){
+
+	sizeOfGraph = size;
 	numOfEdges = 0;
-	numOfVertices = size;
-	capacity = (size*(size-1))/2;
+	numOfVertices = sizeOfGraph;
+	capacity = (sizeOfGraph*(sizeOfGraph-1))/2;
     if(capacity>0){
-        Edges = new Edge**[capacity];
-        for(int i = 0;i<capacity;i++){
-            Edges[i] = new Edge*[capacity];
+        Edges = new Edge**[sizeOfGraph];
+        for(int i = 0;i<sizeOfGraph;i++){
+            Edges[i] = new Edge*[sizeOfGraph];
         }
     }
     if(capacity>0){
-        for(int i=0;i<capacity;i++){
-            for(int j=0;j<capacity;j++){
+        for(int i=0;i<sizeOfGraph;i++){
+            for(int j=0;j<sizeOfGraph;i++){
+                
                 Edges[i][j] = NULL;
             }
         }
@@ -45,18 +47,20 @@ long int GraphMatrix::numVertices() const{
 }
 
 void GraphMatrix::addEdge(int vert1, int vert2, double weight){
-    //add extra feature that ensures that vert2>vert1 and never less to avoid duplication; if !(vert2>vert1) it should return an error that edge already exist
-	if(!(vert1>capacity)&&!(vert2>capacity)){
+    //adds extra feature that ensures that vert2>vert1 and never less to avoid duplication; if !(vert2>vert1) it should return an error that edge already exist
+	if(!(vert1>sizeOfGraph)&&!(vert2>sizeOfGraph)){
 		if(capacity>0&&!(numOfEdges>capacity)){
 			//pointers	
+			Edge* newEdge;
 			Vertex* v1;
 			Vertex* v2;
 			//point pointers to initilised obj with constructor
 			Vertex vertx1(vert1), vertx2(vert2);
 			v1 = &vertx1, v2 = &vertx2;
-            Edge* edge1 = new Edge(v1, v2, weight);
+			Edge e(v1, v2, weight);
+			newEdge = &e;
 			//addEdge
-			Edges[vert1][vert2] = edge1;
+			Edges[vert1][vert2] = newEdge;
 			numOfEdges++;
 		}
 		else{
@@ -74,7 +78,7 @@ void GraphMatrix::addEdge(int vert1, int vert2, double weight){
 }
 
 void GraphMatrix::removeEdge(int i, int j){
-	if(!(i>capacity)&&!(j>capacity)){
+	if(!(i>sizeOfGraph)&&!(j>sizeOfGraph)){
 		if(numOfEdges>0){
 			Edge* temp = Edges[i][j];
 			Edges[i][j] = NULL;
@@ -91,16 +95,17 @@ void GraphMatrix::removeEdge(int i, int j){
 }
 
 void GraphMatrix::initGraph(int size){
-	capacity = (size*(size-1))/2;
+	sizeOfGraph = size;
+	capacity = (sizeOfGraph*(sizeOfGraph-1))/2;
 	if(capacity>0){
-	Edges = new Edge**[capacity];
-		for(int i = 0;i<capacity;i++){
-			Edges[i] = new Edge*[capacity];
+	Edges = new Edge**[sizeOfGraph];
+		for(int i = 0;i<sizeOfGraph;i++){
+			Edges[i] = new Edge*[sizeOfGraph];
 		}	
 	}
 	if(capacity>0){
-		for(int i=0;i<capacity;i++){
-			for(int j=0;j<capacity;i++){
+		for(int i=0;i<sizeOfGraph;i++){
+			for(int j=0;j<sizeOfGraph;i++){
 
 				Edges[i][j] = NULL;
 			}
@@ -127,8 +132,8 @@ std::vector<Edge*>  GraphMatrix::getEdgeList(){
 	std::vector<Edge*> EdgeList;
 	EdgeList.reserve(numOfEdges);
 	//extract edges from graph
-	for(int i=0; i<capacity;i++){
-		for(int j=0; j<capacity;j++){
+	for(int i=0; i<sizeOfGraph;i++){
+		for(int j=0; j<sizeOfGraph;j++){
 			if(Edges[i][j]!=NULL){
 				EdgeList.push_back(Edges[i][j]);
 			}
@@ -140,47 +145,26 @@ std::vector<Edge*>  GraphMatrix::getEdgeList(){
 	return EdgeList;
 }
 
-//void GraphMatrix::display(){
-//	std::vector<Vertex*> Vertices;
-//	Vertices.reserve(capacity);
-//	//extract vertices and their adjacent vertices
-//	for(int i=0;i<capacity;i++){
-//		Vertex u(i);
-//		Vertex* v1 = &u;
-//		for(int j=0;j<capacity;j++){
-//			if(Edges[i][j]!=NULL){
-//				v1->addEdge(Edges[i][j]);
-//			}
-//		}
-//		Vertices.push_back(v1);
-//	}
-//	//display the Vertice
-//}
-
 void GraphMatrix::display(){
-    std::cout << "# Adjacency Matrix: By edges ( currently not correctly displayed)" << std::endl;
-    // need to used the std::fixed output
-    for(int i=0;i<numVertices();i++){
-        std::cout<<"| "<<i<<" ";
-    }
-    std::cout<<std::endl;
-    for(int i=0;i<numVertices();i++){
-        std::cout<<i<<"| ";
-        for(int j=0;j<numVertices();j++){
-            if(Edges[i][j]==NULL){
-                std::cout<<" ∅ |";
-            }
-            else {
-                std::cout << " " <<Edges[i][j]->getWeight()<<"|";
-            }
-        }
-        std::cout<<std::endl;
-    }
+	std::vector<Vertex*> Vertices;
+	Vertices.reserve(sizeOfGraph);
+	//extract vertices and their adjacent vertices
+	for(int i=0;i<sizeOfGraph;i++){
+		Vertex u(i);
+		Vertex* v1 = &u;
+		for(int j=0;j<sizeOfGraph;j++){
+			if(Edges[i][j]!=NULL){
+				v1->addEdge(Edges[i][j]);
+			}
+		}
+		Vertices.push_back(v1);
+	}
+	//display the Vertice
 }
 
 GraphMatrix::~GraphMatrix(){
-	for(int i=0; i < capacity; i++){
-		for(int j=0; j < capacity; j++){
+	for(int i=0; i<sizeOfGraph; i++){
+		for(int j=0; j<sizeOfGraph; j++){
 			delete Edges[i][j];
 		}
 		delete[] Edges[i];
